@@ -1,15 +1,15 @@
 import "./styles.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Qe1 from "./Qe1";
-import Q2 from "./Q2";
-import Q3 from "./Q3";
-import Q4 from "./Q4";
-import Q5 from "./Q5";
-import Res from "./Res";
-import Nav from "./Nav";
+import Qe1 from "./Components/Qe1";
+import Q2 from "./Components/Q2";
+import Q3 from "./Components/Q3";
+import Q4 from "./Components/Q4";
+import Q5 from "./Components/Q5";
+import Res from "./Components/Res";
+import Nav from "./Components/Nav";
 import { obj, obj1, obj2 } from "./data";
-import Home from "./Home";
+import Home from "./Components/Home";
 
 export default function App() {
   const [name, setname] = useState("");
