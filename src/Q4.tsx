@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 type P = {
   q1: any;
@@ -20,37 +20,39 @@ export default function Q4(props: P) {
       <p>apple: {"  "} magic</p>
       <p>apple: {"  "} skoda</p>
       <p>apple: {"  "} audi</p>
-      A:
-      <input
-        type="text"
-        placeholder="type answer"
+
+      <TextField
+        style={{ marginTop: "10px" }}
+        id="outlined-basic"
+        label="Type answer"
+        variant="outlined"
         onChange={(e) => {
           props.seta(e.target.value);
         }}
       />
-      <br />
-      B:
-      <input
-        type="text"
-        placeholder="type answer"
+      <TextField
+        style={{ marginTop: "10px" }}
+        id="outlined-basic"
+        label="Type answer"
+        variant="outlined"
         onChange={(e) => {
           props.setb(e.target.value);
         }}
       />
-      <br />
-      C:
-      <input
-        type="text"
-        placeholder="type answer"
+      <TextField
+        style={{ marginTop: "10px" }}
+        id="outlined-basic"
+        label="Type answer"
+        variant="outlined"
         onChange={(e) => {
           props.setc(e.target.value);
         }}
       />
-      <br />
-      D:
-      <input
-        type="text"
-        placeholder="type answer"
+      <TextField
+        style={{ marginTop: "10px" }}
+        id="outlined-basic"
+        label="Type answer"
+        variant="outlined"
         onChange={(e) => {
           props.setd(e.target.value);
         }}

@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-type P = {
+
+type Props = {
   resfun: any;
   q1: any;
   name: string;
   setans3: any;
   setans33: any;
 };
-export default function Q3(props: P) {
+export default function Q3(props: Props) {
   const navigate = useNavigate();
   return (
     <>

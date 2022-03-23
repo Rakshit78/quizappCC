@@ -1,5 +1,5 @@
 import "./styles.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Qe1 from "./Qe1";
 import Q2 from "./Q2";
@@ -27,6 +27,7 @@ export default function App() {
   const [b, setb] = useState("");
   const [c, setc] = useState("");
   const [d, setd] = useState("");
+
   const resfun = () => {
     setcount(count + 1);
   };

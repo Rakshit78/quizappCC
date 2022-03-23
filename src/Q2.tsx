@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
 type P = {
   resfun: any;
   q: any;
@@ -13,23 +16,28 @@ export default function Q2(props: any) {
     <>
       <p>candidate Name {props.name}</p>
       <h1>{props.q1.ques2}</h1>
-      True:
-      <input
-        type="radio"
+
+      <FormControlLabel
         value="yes"
-        name="app"
-        onChange={(e) => {
-          props.setans2(e.target.value);
-        }}
+        control={
+          <Radio
+            onChange={(e) => {
+              props.setans2(e.target.value);
+            }}
+          />
+        }
+        label="True"
       />
-      False:
-      <input
-        type="radio"
+      <FormControlLabel
         value="false"
-        name="app"
-        onChange={(e) => {
-          props.setans2(e.target.value);
-        }}
+        control={
+          <Radio
+            onChange={(e) => {
+              props.setans2(e.target.value);
+            }}
+          />
+        }
+        label="False"
       />
       <br />
       <br />

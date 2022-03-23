@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-type P = {
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Radio from "@mui/material/Radio";
+
+type Props = {
   setvisible: any;
   name: string;
   setname: any;
@@ -9,8 +13,9 @@ type P = {
   setgender: any;
   subject: string;
   setsubject: any;
+  navigate: any;
 };
-export default function Home(props: P) {
+export default function Home(props: Props) {
   const navigate = useNavigate();
   const buttonhandle = () => {
     if (props.name === "" || props.gender === "" || props.subject === "") {
@@ -41,77 +46,94 @@ export default function Home(props: P) {
           navigate("/q1");
         }}
       >
-        <input
-          style={{ marginTop: "20px", padding: "4px 6px" }}
-          type="text"
-          value={props.name}
-          placeholder="Enter Your Name"
+        <TextField
+          style={{ marginTop: "10px" }}
+          id="outlined-basic"
+          label="Enter Your Name"
+          variant="outlined"
           onChange={(e) => {
             props.setname(e.target.value);
           }}
+          value={props.name}
         />
         <br />
         <br />
-        <label htmlFor="gender">Male:</label>
-        <input
-          type="radio"
-          value="Male"
-          placeholder="Enter Your Name"
-          name="gender"
-          onChange={(e) => {
-            console.log(e.target.value);
-            props.setgender(e.target.value);
-          }}
-        />
-        <label htmlFor="gender">Female:</label>
 
-        <input
-          type="radio"
+        <FormControlLabel
           value="female"
-          placeholder="Enter Your Name"
-          name="gender"
-          onChange={(e) => {
-            console.log(e.target.value);
-            props.setgender(e.target.value);
-          }}
+          control={
+            <Radio
+              onChange={(e) => {
+                console.log(e.target.value);
+                props.setgender(e.target.value);
+              }}
+            />
+          }
+          label="Female"
         />
-        <br />
-        <br />
-        <label htmlFor="subject">English:</label>
+        <FormControlLabel
+          value="male"
+          control={
+            <Radio
+              onChange={(e) => {
+                console.log(e.target.value);
+                props.setgender(e.target.value);
+              }}
+            />
+          }
+          label="Male"
+        />
+        <FormControlLabel
+          value="other"
+          control={
+            <Radio
+              onChange={(e) => {
+                console.log(e.target.value);
+                props.setgender(e.target.value);
+              }}
+            />
+          }
+          label="Other"
+        />
 
-        <input
-          type="radio"
+        <br />
+        <br />
+
+        <FormControlLabel
           value="English"
-          placeholder="Enter Your Name"
-          name="subject"
-          onChange={(e) => {
-            // setsubject(e.target.value);
-            console.log(e.target.value);
-          }}
+          control={
+            <Radio
+              onChange={(e) => {
+                props.setsubject(e.target.value);
+                console.log(e.target.value);
+              }}
+            />
+          }
+          label="English"
         />
-        <label htmlFor="subject">Java:</label>
-
-        <input
-          type="radio"
+        <FormControlLabel
           value="Java"
-          placeholder="Enter Your Name"
-          name="subject"
-          onChange={(e) => {
-            props.setsubject(e.target.value);
-            console.log(e.target.value);
-          }}
+          control={
+            <Radio
+              onChange={(e) => {
+                props.setsubject(e.target.value);
+                console.log(e.target.value);
+              }}
+            />
+          }
+          label="Java"
         />
-        <label htmlFor="subject">React js:</label>
-
-        <input
-          type="radio"
-          value="React"
-          placeholder="Enter Your Name"
-          name="subject"
-          onChange={(e) => {
-            props.setsubject(e.target.value);
-            console.log(e.target.value);
-          }}
+        <FormControlLabel
+          value="React js"
+          control={
+            <Radio
+              onChange={(e) => {
+                props.setsubject(e.target.value);
+                console.log(e.target.value);
+              }}
+            />
+          }
+          label="React js"
         />
         <br />
         <br />
